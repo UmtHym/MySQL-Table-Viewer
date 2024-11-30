@@ -4,12 +4,18 @@ const { testConnection } = require("./config/db");
 const cors = require("cors");
 require("dotenv").config();
 
+//import routes
+const schemaRoutes = require("./routes/schemaRoutes");
+
 // Create Express app
 const app = express();
 
 // Middleware
 app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // Parse JSON bodies
+
+// Use routes with /api prefix
+app.use("/api", schemaRoutes);
 
 //Test route
 app.get("/api/test", (req, res) => {
