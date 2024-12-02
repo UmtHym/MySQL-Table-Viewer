@@ -69,15 +69,15 @@ npm run dev
 
 ## 🎯 Upcoming Features
 
-[] Interactive schema diagram
-[] Database switching capability
-[] Search functionality
-[] Schema export options
-[] Advanced filtering
-[] Pagination for large datasets
-[] Table statistics and metrics
-[] Loading states
-[] Structure copy functionality
+- [] Interactive schema diagram
+- [] Database switching capability
+- [] Search functionality
+- [] Schema export options
+- [] Advanced filtering
+- [] Pagination for large datasets
+- [] Table statistics and metrics
+- [] Loading states
+- [] Structure copy functionality
 
 ## 🤝 Contributing
 
