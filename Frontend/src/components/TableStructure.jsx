@@ -33,31 +33,33 @@ function TableStructure({ selectedTable }) {
     <div className="table-structure">
       <h2>Structure of {selectedTable}</h2>
       {error && <p className="error">{error}</p>}
-      <table>
-        <thead>
-          <tr>
-            <th>Column Name</th>
-            <th>Data Type</th>
-            <th>Nullable</th>
-            <th>Key</th>
-            <th>Default</th>
-            <th>Extra</th>
-          </tr>
-        </thead>
-        <tbody>
-          {structure &&
-            structure.map((column, index) => (
-              <tr key={index}>
-                <td>{column.Field}</td>
-                <td>{column.Type}</td>
-                <td>{column.Null}</td>
-                <td>{column.Key}</td>
-                <td>{column.Default || "NULL"}</td>
-                <td>{column.Extra}</td>
-              </tr>
-            ))}
-        </tbody>
-      </table>
+      <div className="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Column Name</th>
+              <th>Data Type</th>
+              <th>Nullable</th>
+              <th>Key</th>
+              <th>Default</th>
+              <th>Extra</th>
+            </tr>
+          </thead>
+          <tbody>
+            {structure &&
+              structure.map((column, index) => (
+                <tr key={index}>
+                  <td>{column.Field}</td>
+                  <td>{column.Type}</td>
+                  <td>{column.Null}</td>
+                  <td>{column.Key}</td>
+                  <td>{column.Default || "NULL"}</td>
+                  <td>{column.Extra}</td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

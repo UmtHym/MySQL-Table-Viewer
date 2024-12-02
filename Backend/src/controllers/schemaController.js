@@ -11,7 +11,7 @@ const schemaController = {
       // Send the results back
       res.json(tables);
     } catch (error) {
-      console.error("Error getching tables", error);
+      console.error("Error fetching tables", error);
       res.status(500).json({ error: "Failed to fetch tables" });
     } finally {
       // Always release the connection
