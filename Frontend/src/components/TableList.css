@@ -1,0 +1,32 @@
+.table-list {
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.tables {
+  list-style: none;
+  padding: 0;
+}
+
+.table-item {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f5f5f5;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.table-item:hover {
+  background-color: #e0e0e0;
+}
+
+.table-item.selected {
+  background-color: #007bff;
+  color: black;
+}
+
+.error {
+  color: red;
+  padding: 10px;
+}
