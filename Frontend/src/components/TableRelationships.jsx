@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import "./TableRelationships.css";
 
 const TableRelationships = ({ selectedTable }) => {
   const [relationships, setRelationships] = useState([]);

@@ -1,20 +1,40 @@
 const { pool } = require("../config/db");
 
 const schemaController = {
+  getTableData: async (req, res) => {
+    let connection;
+    try {
+      connection = await pool.getConnection();
+
+      const { tableName } = req.params;
+
+      const [rows] = await connection.query("SELECT * FROM ??", [tableName]);
+
+      res.json(rows);
+    } catch (error) {
+      console.error("Detailed Database error:", {
+        message: error.message,
+        stack: error.stack,
+        code: error.code,
+      });
+      res.status(500).json({ error: error.message });
+    } finally {
+      if (connection) {
+        connection.release();
+      }
+    }
+  },
+
   getAllTables: async (req, res) => {
     let connection;
     try {
-      // Get a connection from the pool
       connection = await pool.getConnection();
-      // Query to show all tables
       const [tables] = await connection.query("SHOW TABLES");
-      // Send the results back
       res.json(tables);
     } catch (error) {
       console.error("Error fetching tables", error);
       res.status(500).json({ error: "Failed to fetch tables" });
     } finally {
-      // Always release the connection
       if (connection) connection.release();
     }
   },
@@ -79,11 +99,11 @@ const schemaController = {
       const relationships = {
         outgoing: outgoingRelations.map((rel) => ({
           ...rel,
-          relationship_type: "many-to-one", // Foreign key implies many-to-one
+          relationship_type: "many-to-one",
         })),
         incoming: incomingRelations.map((rel) => ({
           ...rel,
-          relationship_type: "one-to-many", // Being referenced implies one-to-many
+          relationship_type: "one-to-many",
         })),
         summary: {
           table: tableName,

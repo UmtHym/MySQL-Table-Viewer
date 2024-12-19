@@ -1,0 +1,66 @@
+.relationships-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.relationship-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  transition: background-color 0.2s;
+}
+
+.relationship-item:hover {
+  background-color: #f9fafb;
+}
+
+.relationship-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.table-name {
+  min-width: 120px;
+  font-weight: 500;
+}
+
+.relationship-type {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow {
+  color: #3b82f6;
+  font-size: 20px;
+}
+
+.relationship-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.relationship-details {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.detail-label {
+  font-weight: 500;
+}
+
+.text-gray {
+  color: #6b7280;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

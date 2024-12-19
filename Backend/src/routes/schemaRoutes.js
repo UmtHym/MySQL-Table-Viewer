@@ -5,6 +5,8 @@ const schemaController = require("../controllers/schemaController");
 //Route to get all tables
 router.get("/tables", schemaController.getAllTables);
 
+router.get("/table/:tableName/data", schemaController.getTableData);
+
 //Route to get specific table structure
 router.get("/table/:tableName", schemaController.getTableStructure);
 
